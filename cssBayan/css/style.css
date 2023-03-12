@@ -8,7 +8,8 @@
 
 /* HEADER */
 .header {
-  width: 1180px;
+  max-width: 1180px;
+  width: 90%;
   margin: 10px auto;
   border-bottom: 1px solid #252525;
 }
@@ -18,7 +19,8 @@
 }
 
 .main {
-  width: 1180px;
+  max-width: 1180px;
+  width: 90%;
   margin: 30px auto 0 auto;
 }
 
@@ -104,7 +106,8 @@
 .accordion__input:checked ~ .accordion__content .accordion__img,
 .accordion__item:hover .accordion__img
  {
-  width: 400px;
+  max-width: 400px;
+  width: 90%;
 }
 
 .accordion__input:checked ~ .accordion__title,
