@@ -64,6 +64,7 @@
   content: "\f054";
   font-family: FontAwesome;
   padding: 3px;
+  transition: all 1s;
 }
 
 .accordion__input {
@@ -71,24 +72,39 @@
 }
 
 .accordion__content {
-  display: none;
-  border: solid rgb(119, 121, 206);
-  border-width: 0 2px 2px;
-  padding: 20px;
+  overflow: hidden;
+  max-height: 0;
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0);
+  padding: 0;
   border-radius: 0 0 8px 8px;
+
+  transition: max-height 1s;
+  transition: border-color 1s;
 }
 
 .accordion__img {
   display: block;
-  width: 400px;
+  width: 0;
   margin: 0 auto;
+
+  transition: width 1s;
 }
 
 
 .accordion__input:checked ~ .accordion__content,
 .accordion__item:hover .accordion__content
  {
-  display: block;
+  max-height: 100%;
+  border: solid rgb(119, 121, 206);
+  border-width: 0 2px 2px;
+  padding: 20px;
+}
+
+.accordion__input:checked ~ .accordion__content .accordion__img,
+.accordion__item:hover .accordion__img
+ {
+  width: 400px;
 }
 
 .accordion__input:checked ~ .accordion__title,
@@ -96,9 +112,8 @@
   border-radius: 8px 8px 0 0;
 }
 
-.accordion__content:hover ~
 
 .accordion__input:checked ~ .accordion__title::after,
 .accordion__item:hover .accordion__title::after {
-  content: "\f078";
+  rotate: 90deg;
 }
