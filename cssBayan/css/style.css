@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+/* HEADER */
+.header {
+  max-width: 1180px;
+  width: 90%;
+  margin: 10px auto;
+  border-bottom: 1px solid #252525;
+}
+
+.header__title {
+  padding: 10px;
+}
+
+.main {
+  max-width: 1180px;
+  width: 90%;
+  margin: 30px auto 0 auto;
+}
+
+/* ACCORDION */
+.accordion {
+  width: 100%;
+}
+
+.accordion:hover {
+  cursor: pointer;
+}
+
+.accordion:hover .accordion__title::after {
+  display: inline;
+}
+
+.accordion__item {
+  margin-bottom: 20px ;
+}
+
+.accordion__item:active {
+  border-radius: 8px;
+  background-color: rgb(119, 121, 206);
+  color: white;
+}
+
+.accordion__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgb(119, 121, 206);
+  color: white;
+  font-size: 1.8em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordion__title::after {
+  display: none;
+  content: "\f054";
+  font-family: FontAwesome;
+  padding: 3px;
+  transition: all 1s;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__content {
+  overflow: hidden;
+  max-height: 0;
+  border-width: 2px;
+  border-color: rgba(0, 0, 0, 0);
+  padding: 0;
+  border-radius: 0 0 8px 8px;
+
+  transition: max-height 1s;
+  transition: border-color 1s;
+}
+
+.accordion__img {
+  display: block;
+  width: 0;
+  margin: 0 auto;
+
+  transition: width 1s;
+}
+
+
+.accordion__input:checked ~ .accordion__content,
+.accordion__item:hover .accordion__content
+ {
+  max-height: 100%;
+  border: solid rgb(119, 121, 206);
+  border-width: 0 2px 2px;
+  padding: 20px;
+}
+
+.accordion__input:checked ~ .accordion__content .accordion__img,
+.accordion__item:hover .accordion__img
+ {
+  max-width: 400px;
+  width: 90%;
+}
+
+.accordion__input:checked ~ .accordion__title,
+.accordion__item:hover .accordion__title {
+  border-radius: 8px 8px 0 0;
+}
+
+
+.accordion__input:checked ~ .accordion__title::after,
+.accordion__item:hover .accordion__title::after {
+  rotate: 90deg;
+}
