@@ -35,6 +35,12 @@
   margin-bottom: 20px ;
 }
 
+.accordion__item:active {
+  border-radius: 8px;
+  background-color: rgb(119, 121, 206);
+  color: white;
+}
+
 .accordion__title {
   display: flex;
   flex-direction: row;
@@ -67,6 +73,10 @@
   border-width: 0 2px 2px;
   padding: 20px;
   border-radius: 0 0 8px 8px;
+}
+
+.accordion__content:hover {
+  display: block;
 }
 
 .accordion__input:checked ~ .accordion__content,
