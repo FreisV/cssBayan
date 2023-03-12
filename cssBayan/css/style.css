@@ -79,6 +79,12 @@
   border-radius: 0 0 8px 8px;
 }
 
+.accordion__img {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
 .accordion__content:hover {
   display: block;
 }
