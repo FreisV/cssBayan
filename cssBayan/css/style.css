@@ -28,7 +28,9 @@
 }
 
 .accordion__title {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   padding: 20px;
   border-radius: 8px;
@@ -38,6 +40,13 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.accordion__title::after {
+  content: "\f054";
+  font-family: FontAwesome;
+  padding: 3px;
+}
+
 
 .accordion__input {
   display: none;
@@ -59,4 +68,9 @@
 .accordion__input:checked ~ .accordion__title,
 .accordion__title:hover {
   border-radius: 8px 8px 0 0;
+}
+
+.accordion__input:checked ~ .accordion__title::after,
+.accordion__title:hover::after {
+  content: "\f078";
 }
