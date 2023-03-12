@@ -27,6 +27,14 @@
   width: 100%;
 }
 
+.accordion:hover .accordion__title::after {
+  display: inline;
+}
+
+.accordion__item {
+  margin-bottom: 20px ;
+}
+
 .accordion__title {
   display: flex;
   flex-direction: row;
@@ -42,6 +50,7 @@
 }
 
 .accordion__title::after {
+  display: none;
   content: "\f054";
   font-family: FontAwesome;
   padding: 3px;
